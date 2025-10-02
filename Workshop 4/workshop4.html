@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+	<title>Työpaja 4</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="css/styles.css" />
+	
+</head>
+
+<body>
+	<hr />
+	<h2>Tehtävä 1: Perus- DOM-muokkaus</h2>
+	<p>
+		&nbsp;Alla näet kolme painiketta. Muokkaa lähdekoodia ja lisää näille
+		painikkeille onClick-tapahtumat. Käytä kehittäjäkonsolia löytääksesi
+	</p>
+	<p>
+		<button onclick="changeHeading();">Painike 1</button>
+		<button onclick="secondButton();">Painike 2</button>
+		<button onclick="third()">Painike 3</button>
+	</p>
+
+	<ul>
+		<li>
+			Ensimmäisen painikkeen tulisi suorittaa JavaScript-funktio, joka löytää
+			viittauksen sivun &quot;Tehtävä1 -otsikon ja muuttaa sen
+			sisällön muotoon &quot;Muokattu otsikko!&quot;.
+		</li>
+		<li>
+			Toisen painikkeen tulisi suorittaa funktio, joka muuttaa sivun
+			&quot;Tehtävä 2&quot; -otsikon tyyliä. JavaScriptin tulee muuttaa
+			vähintään fonttikokoa, tyyliä, väritystä sekä taustaväriä.
+		</li>
+		<li>
+			Kolmas painike lisää korvaa allaolevan Lorem Ipsum-tekstikappaleen sisällön jollain itse valitsemallasi
+			tekstillä. Säilytä tekstin muotoilu.<br />
+			<br />
+			<em>
+				<strong id="lorem">&quot;Lorem ipsum</strong>
+				dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum
+				sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed
+				sapien. Mauris varius diam vitae arcu. Sed arcu lectus auctor vitae,
+				consectetuer et venenatis eget velit. &quot;<br><br>
+			</em>
+		</li>
+		<li>
+			Bonus: Miten lisäisit tekstiä Lorem Ipsum-kappaleen perään ylikirjoittamatta olemassaolevaa tekstiä?
+		</li>
+		<li>Bonus: Miten vaihtaisit JavaScriptillä koko sivun taustaväriä?</li>
+	</ul>
+
+
+	<hr />
+	<h2>Tehtävä 2: Elementtien luomista dynaamisesti</h2>
+	Tee allaolevat operaatiot sivulle JavaScriptia käyttäen. Älä siis kirjoita itse HTML:n sekaan tägejä vaan kirjoita
+	JavaScript-koodi joka luo ne. Kokeile komento kerrallaan ensin konsolissa. Kun löydät oikeat komennot, vie ne HTML:n
+	sivulle talteen. Muokkaa myös tyylejä JS:n avulla.
+	<ul>
+		<li>Etsi sivulta div-elementti, jonka id="sisalto" käyttäen document.querySelector-funtiota.</li>
+		<li>Luo div-elementin sisälle uusi h3 - tägi jossa lukee "Etusivun uutinen"</li>
+		<li>Tyylittele otsikko ainakin tekstin värin ja fontin osalta JavaScriptia käyttäen. (vinkki: käytä
+			.style-kenttää)</li>
+		<li>Lisää saman div-elementin sisälle myös img-tägi. Määrittele sen .src-kenttään haluamasi kuvan url. Säädä
+			kuvan koko .style-kentän avulla.</li>
+		<li>Lisää kuvan alle, mutta DIV-lohkon ulkopuolelle, muutama nappi. </li>
+		<li>Lisää nappeihin kuuntelijat Javascriptin avulla. Ensimmäinen nappi voisi piilottaa koko äsken luodun
+			DIV-lohkon. Toinen voisi tuoda sen taas esiin. (Vinkki: .style.display="none" piilottaa elementin.)</li>
+		<hr>
+		<h2>Tehtävä 3: Kuvat ja alasvetovalikot</h2>
+		<ul>
+			<li>
+				Kirjoita JavaScript-funktio, joka suoritetaan, kun alasvetovalikon valinta
+				muuttuu (onchange-kuuntelija). Näytä käyttäjän valinta alert-ikkunassa.
+			</li>
+
+			<li>
+				Kun saat edellisen kohdan toimimaan, muokkaa koodia siten että automallin valinta alasvetovalikosta
+				vaihtaa
+				alla näkyvän kuvan toiseksi. Tutki sivun koodia ja mieti miten tämä toteutetaan. Etsi sopivat kuvat eri
+				autoille verkosta. Vinkki: kuvan id sivulla on "carimage".
+			</li>
+			<li>
+				Rakenna kuvaan kuuntelija, joka saa aikaan sen että kun hiiri siirtyy kuvan päälle, kuvan ympärille
+				tulee
+				näkyä värillinen
+				reunus. Kun hiiri poistuu, reunus katoaa.
+			</li>
+		</ul>
+		<p>Valitse uusi auto listasta.</p>
+		<select name="mySelect" id="mySelect" onchange="onchangeSelect()">
+			<option value="BMW">BMW</option>
+			<option value="Audi">Audi</option>
+			<option value="Mercedes">Mercedes</option>
+			<option value="Volvo">Volvo</option>
+		</select>
+		<br />
+		<br />
+		<img alt="Auto" onmouseover="" onmouseout="" style="left: 0px; opacity: 1"
+			src="https://www.bmw.fi/content/dam/bmw/common/all-models/m-series/m8-coupe/2022/navigation/bmw-8series-coupe-modellfinder.png"
+			width="400" id="carimage" />
+
+
+		<hr />
+		<h2>Tehtävä 4: Taulukot</h2>
+		<ul>
+			<li>
+				Lue lomakkeen kentät ja tarkasta niiden sisällön oikeellisuus napin painalluksen (on click) jälkeen.
+				Ilmoita
+				käyttäjälle esim. alert-ikkunalla jos tuli virheitä. <ul>
+					<li>Nimen tulee olla yli 5 merkkiä pitkä</li>
+					<li>Tehtävä kenttä ei saa olla tyhjä</li>
+					<li>Palkka kenttä pitää olla yli 0 ja sen tulee sisältää vain numeroita</li>
+				</ul>
+			</li>
+			<li class="surprise">
+				Kun validointi toimii, kirjoita JavaScript-funktio joka lisää syötetyt arvot uutena rivinä allaolevaan
+				taulukkoon. Voit katsoa tukea esim. <a
+					href="https://www.w3schools.com/jsref/met_table_insertrow.asp">täältä</a>.
+			</li>
+			<li>Bonus: miten poistaisit rivejä taulukosta?</li>
+		</ul>
+		<br />
+		<p>
+		<h3>Palkkalomake</h3>
+		Nimi
+		<label for="textfield">:</label>
+		<input type="text" name="textfield" id="nimi" />
+		<br />
+		Tehtävä:
+		<input type="text" name="textfield2" id="tehtava" />
+		<br />
+		Palkka:
+		<input type="text" name="textfield3" id="palkka" />
+		<br /><br>
+		<input type="button" name="Insert" id="Insert" value="Lisää" />
+		</p>
+		<table id="data" class="display" border="1">
+			<thead>
+				<tr>
+					<th>Nimi</th>
+					<th>Tehtävä</th>
+					<th>Palkka</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Tiger Nixon</td>
+					<td>System Architect</td>
+					<td>$320 800</td>
+				</tr>
+				<tr>
+					<td>Garrett Winters</td>
+					<td>Accountant</td>
+					<td>$170 750</td>
+				</tr>
+				<tr>
+					<td>Ashton Cox</td>
+					<td>Junior Technical Author</td>
+					<td>$86 000</td>
+				</tr>
+				<tr>
+					<td>Cedric Kelly</td>
+					<td>Senior Javascript Developer</td>
+					<td>$433 060</td>
+				</tr>
+				<tr>
+					<td>Airi Satou</td>
+					<td>Accountant</td>
+					<td>$162 700</td>
+				</tr>
+			</tbody>
+			<tfoot></tfoot>
+		</table>
+
+		<hr />
+
+		<h2>Bonus-tehtävä: Siirrä elementtejä</h2>
+		<ul>
+			<li>
+				<p class="surprise">
+					Voit tehdä siistejä asioita muokkaamalla CSS-sääntöjä JavaScriptin
+					kautta. Katso esimerkkejä luentodioista. Kokeile sitten näitä:
+				</p>
+				<ol>
+					<li>
+						<button onclick="changePosition()">Siirrä!</button> Valitse div,
+						jonka id on &quot;carimage&quot; ja siirrä se 200px vasemmalle ja
+						500px alaspäin.
+					</li>
+					<li>
+						<button onclick="setInterval(function(){doMove();},1000); ">
+							Animoi
+						</button>
+						Kirjoita funktio doMove(), joka liikuttaa kuvaa näytön poikki tai
+						vielä parempi: edestakaisin näytöllä. Interval on jo lisätty listan
+						kohteen onclick-tapahtumaan.
+					</li>
+					<li>
+						<button onclick="setInterval(function(){fadeOut();},250);">
+							Häivytä!
+						</button>
+						Kirjoita funktio fadeOut(), joka hitaasti pienentää kuvan
+						opacity-arvon 1.0:sta 0:aan, jolloin kuva häviää. Interval on jo
+						lisätty listan kohteen onclick-tapahtumaan.
+					</li>
+					<li>
+						<button onclick="remove()">Häviä!</button> Lopuksi kirjoita
+						JavaScript, joka poistaa kuvan sivulta.
+					</li>
+				</ol>
+			</li>
+		</ul>
+
+		<hr />
+		<h2>Bonustehtäviä innokkaille</h2>
+		<ul>
+			<li dir="ltr">
+				<p dir="ltr">
+					Kirjoita silmukka, joka käy läpi kaikki sivun LI-tagit ja korvaa ne
+					&lt;strong&gt;-tagilla merkityllä, punaisella tekstillä, joka sanoo
+					&quot;Korvattu&quot;.
+				</p>
+			</li>
+			<li dir="ltr">
+				Miten korvaisit sisällön vain niissä, joissa on sana
+				&lsquo;Select&rsquo;?
+			</li>
+		</ul>
+<div id="sisalto"></div>
+
+		<script>
+		// Tehtävä 1
+		function changeHeading() {
+    const first = document.querySelector("h2");
+    first.textContent= "Muokattu otsikko!";
+}
+function secondButton() {
+    const second = document.querySelectorAll("h2")[1];
+    second.style.fontSize ='150%';
+    second.style.color = "red";
+    second.style.fontFamily = "courier";
+    second.style.backgroundColor = "blue";
+}
+function third() {
+	const third = document.getElementById("lorem");
+	third.textContent = "Tässä uusi teksti.";
+}
+// Tehtävä 2
+const elementti = document.querySelector("#sisalto");
+const h3 = document.createElement("h3");
+h3.textContent = "Etusivun uutinen";
+h3.style.color = "darkblue";
+h3.style.fontFamily = "Arial, sans-serif";
+h3.style.fontSize = "28px";
+elementti.appendChild(h3);
+const kuva = document.createElement("img");
+kuva.src = "https://cdn.pixabay.com/photo/2024/11/22/13/43/autumn-9216501_1280.jpg";
+kuva.alt = "Esimerkkikuva";
+kuva.style.width = "300px";
+kuva.style.height = "200px";
+kuva.style.display = "block";
+kuva.style.marginTop = "10px";
+elementti.appendChild(kuva);
+const piilota = document.createElement("button");
+piilota.textContent = "Piilota div";
+const näytä = document.createElement("button");
+näytä.textContent = "Näytä div";
+piilota.addEventListener("click", function() {
+elementti.style.display = "none";
+    });
+
+näytä.addEventListener("click", function() {
+      elementti.style.display = "block";
+    });
+
+document.body.appendChild(piilota);
+document.body.appendChild(näytä);
+
+// Tehtävä 3
+
+    const valinta = document.getElementById("mySelect");
+	const kuva2 = document.getElementById("carimage");
+	kuva2.addEventListener("mouseover", function(){
+		kuva2.style.border = "5px solid red";
+	});
+	  kuva2.addEventListener("mouseout", function() {
+    kuva2.style.border = "none";
+  });
+  function onchangeSelect() {
+	const valittu = valinta.value;
+    alert("Valitsit " + valittu);
+
+	if (valittu === "BMW") {
+		kuva2.src = "https://www.bmw.fi/content/dam/bmw/common/all-models/m-series/m8-coupe/2022/navigation/bmw-8series-coupe-modellfinder.png";
+	}
+	else if (valittu === "Audi") {
+		kuva2.src = "https://mediaservice.audi.com/media/fast/H4sIAAAAAAAAAFvzloG1tIiBOTrayfuvpGh6-m1zJgaGigIGBgZGoDhTtNOaz-I_2DhCHsCEtzEwF-SlMwJZKUycmbmJ6an6QD4_I3taTmV-aUkxO0grz8IDD7bLrOgW_zvr0A_LO7Z8s-5mvmdgBepivAEkmKcBCb4CIMEpzQAmQeYdABFNID6TPTMDA2sFkBHJAAJ8fKVFOQWJRYm5euWZKSUZghoGRAJhdhfXEEdPn2AAg_Ys3-kAAAA.webp?wid=332";
+	} else if (valittu === "Mercedes") {
+		kuva2.src = "https://images.netdirector.co.uk/gforces-auto/image/upload/w_823,h_549,q_auto,c_fill,f_auto,fl_lossy/auto-client/f064001d68b6cfb48499e8bf6671ff32/high_tech_silver.png";
+	} else {
+		kuva2.src = "https://wizz.volvocars.com/images/2026/256/exterior/studio/standardizedSideView/transparent_exterior-studio-standardizedSideView_DCF500A4439EBA52EE8BEE8645682C8337C15ABE.png?client=lead-capture-sitetostore&w=1920&imdensity=1";
+	}
+	
+}
+// Tehtävä 4
+document.getElementById("Insert").addEventListener("click", function() {
+    const nimi = document.getElementById("nimi").value.trim();
+    const teht = document.getElementById("tehtava").value.trim();
+    const palkka = document.getElementById("palkka").value.trim();
+
+    // Tarkistukset
+    let virheet = [];
+    if (nimi.length <= 5) virheet.push("Nimen tulee olla yli 5 merkkiä pitkä.");
+    if (teht === "") virheet.push("Tehtävä ei saa olla tyhjä.");
+    const palkkaNum = Number(palkka);
+    if (palkka === "" || isNaN(palkkaNum) || palkkaNum <= 0) virheet.push("Palkan tulee olla yli 0 ja sisältää vain numeroita.");
+
+    if (virheet.length > 0) {
+        alert("Seuraavat virheet löytyivät:\n- " + virheet.join("\n- "));
+        return;
+    }
+
+	const taulukko = document.getElementById("data").getElementsByTagName("tbody")[0];
+    const rivi = taulukko.insertRow();
+
+    const soluNimi = rivi.insertCell(0);
+    const soluTeht = rivi.insertCell(1);
+    const soluPalkka = rivi.insertCell(2);
+
+    soluNimi.textContent = nimi;
+    soluTeht.textContent = teht;
+    soluPalkka.textContent = "$" + palkka;
+
+    
+    document.getElementById("nimi").value = "";
+    document.getElementById("tehtava").value = "";
+    document.getElementById("palkka").value = "";
+});
+
+	</script>
+</body>
+
+</html>
