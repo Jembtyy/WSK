@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Viikon Treenilaskuri</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Viikon Treenilaskuri</h1>
+  </header>
+
+  <main>
+    <button id="toggleFormBtn">Lisää treeni</button>
+
+<form id="treeniForm" style="display: none;">
+ <label for="paiva">Päivämäärä:</label> 
+ <input type="date" id="paiva" name="paiva" required>
+ <label for="kesto">Kesto (min):</label>
+<input type="number" id="kesto" name="kesto" min="1" max="180">
+<label for="tyyppi">Tyyppi:</label>
+<select id="tyyppi" name="tyyppi" required>
+    <option value="" disabled selected>Valitse tyyppi</option>
+  <option value="Push">Push</option>
+  <option value="Pull">Pull</option>
+  <option value="Jalkapäivä">Jalkapäivä</option>
+</select>
+<button type="submit">Tallenna</button>
+</form>
+
+<h2>Viikon treenit</h2>
+<table id="treeniTable">
+  <thead>
+    <tr>
+      <th>Päivämäärä</th>
+      <th>Kesto (min)</th>
+      <th>Tyyppi</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+  </tbody>
+</table>
+<div id="viikonYhteenveto">
+  <p><b>Viikon Yhteenveto:</b></p>
+  <p><b>Kokonaiskesto: <span id="kokonaisKesto">0</span> min</b></p>
+  <p><b>Push: <span id="pushProsentti">0</span>%</b></p>
+  <p><b>Pull: <span id="pullProsentti">0</span>%</b></p>
+  <p><b>Jalat: <span id="jalatProsentti">0</span>%</b></p>
+</div>
+<button id="tyhjennaBtn">Tyhjennä kaikki treenit</button>
+<div style="width: 300px; margin: auto;">
+  <canvas id="treeniChart" width="300" height="300"></canvas>
+</div>
+
+
+  
+  </main>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
